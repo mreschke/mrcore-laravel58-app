@@ -1,17 +1,36 @@
 {
-    "name": "laravel/laravel",
+    "name": "mreschke/mrcore-laravel58-app",
     "type": "project",
-    "description": "The Laravel Framework.",
-    "keywords": [
-        "framework",
-        "laravel"
-    ],
+    "description": "mRcore Laravel Module System, CMS and Wiki",
+    "keywords": ["mreschke", "mrcore", "wiki", "cms"],
     "license": "MIT",
+    "repositories": [
+        {"type": "path", "url": "./modules/*/*"}
+    ],
     "require": {
         "php": "^7.1.3",
         "fideloper/proxy": "^4.0",
         "laravel/framework": "5.8.*",
-        "laravel/tinker": "^1.0"
+        "laravel/tinker": "^1.0",
+
+        "guzzlehttp/guzzle": "~6.0",
+        "predis/predis": "~1.0",
+        "symfony/filesystem": "2.7.*",
+        "laravelcollective/html": "5.8.*",
+
+        "mrcore/auth": "*@dev",
+        "mrcore/bootswatch-theme": "*@dev",
+        "mrcore/foundation": "*@dev",
+        "mrcore/parser": "*@dev",
+        "mrcore/text-wiki": "*@dev",
+        "mrcore/wiki": "*@dev",
+
+        "mreschke/dbal": "*@dev",
+        "mreschke/helpers": "*@dev",
+        "mreschke/keystone": "*@dev",
+        "mreschke/render": "*@dev",
+        "mreschke/repository": "*@dev"
+
     },
     "require-dev": {
         "beyondcode/laravel-dump-server": "^1.0",

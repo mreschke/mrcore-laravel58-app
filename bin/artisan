@@ -1,0 +1,6 @@
+#!/bin/bash
+
+base="$( cd "$(dirname "$0")" ; cd ../ ; pwd -P )"
+cd $base
+source .env
+docker-compose -f  ./bin/compose-app.yml exec $DOCKER_APP php artisan "$@"

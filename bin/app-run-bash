@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# This is only to start a new container while docker-compose is NOT running
+# If compose is running you should use app-exec instead as it uses "exec" on existing container
+# This one creates a NEW container and binds the volume.  Use for fixing composer if broken
+# before docker-compose can even start.
+
+source "$( cd "$(dirname "$0")" ; pwd -P )"/.bashrc
+
+docker run -it --rm \
+    --workdir /root/Code/${DOCKER_APP_PATH} \
+    -v ${DOCKER_CODE_BASE}:/root/Code \
+    -v ~/.composer:/root/.composer \
+    ${DOCKER_APP_IMAGE}:${DOCKER_APP_IMAGE_VERSION} \
+    bash

@@ -11,6 +11,20 @@ define('LARAVEL_START', microtime(true));
 
 /*
 |--------------------------------------------------------------------------
+| Mrcore Foundation
+|--------------------------------------------------------------------------
+|
+| Fire up the mrcore foundation to allow asset handling
+| and other foundation support bootstraping.
+|
+*/
+
+$basePath = realpath(__DIR__.'/../');
+$runningInConsole = false;
+require "$basePath/vendor/mrcore/foundation/src/Bootstrap/Start.php";
+
+/*
+|--------------------------------------------------------------------------
 | Register The Auto Loader
 |--------------------------------------------------------------------------
 |

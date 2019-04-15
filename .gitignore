@@ -4,28 +4,17 @@
 /storage/*.key
 /vendor
 /.idea
+/.vscode
 /.vagrant
 Homestead.json
 Homestead.yaml
 npm-debug.log
 yarn-error.log
 .env
-
-# I don't care about locks
-composer.lock
-package-lock.json
+.phpunit.result.cache
 
 .DS_Store
 Thumbs.db
 .nfs*
 .swp
-
 /.rocketeer/logs
-/public/uploads/*
-!/public/uploads/avatar_user1.png
-!/public/uploads/avatar_user2.png
-!/public/uploads/badge_dynatron.png
-!/public/uploads/badge_help.png
-!/public/uploads/badge_mrcore.png
-!/public/uploads/badge_personal.png
-!/public/uploads/badge_site.png
