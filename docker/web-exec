@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# Service name as defined in your docker-compose.yml (not container name, but service name)
+service="web"
+
+echo "Executing Command Inside Running Container..."; echo
+base="$( cd "$(dirname "$0")" ; cd ..; pwd -P )"; cd $base
+docker-compose exec $service "$@"
+

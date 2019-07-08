@@ -1,1 +1,0 @@
-./bin/app-exec composer dump-autoload -o

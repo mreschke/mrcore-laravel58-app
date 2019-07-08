@@ -1,0 +1,45 @@
+version: '3'
+
+services:
+
+  web:
+    image: mreschke/php:7.1
+    container_name: mrcore-laravel58-app
+    working_dir: /var/www/mreschke/php/mrcore-laravel58-app
+    depends_on:
+      - mysql
+      #- redis
+
+    # Map ports (host:container)
+    ports:
+        - "7001:9000" # PHP-FPM runs on 9000
+
+    # Mount host volumes (host:container)
+    volumes:
+      - ~/Code:/var/www
+      - ~/.composer:/root/.composer # To use hosts composer cache
+
+    # Networks
+    networks:
+      - mrcore-laravel58
+
+    # Run command
+    #command: php artisan serve --port=${DOCKER_PHP_PORT} --host=0.0.0.0
+    command: php-fpm7.1 --nodaemonize --allow-to-run-as-root
+
+  mysql:
+    image: mysql:5.7
+    container_name: mrcore-laravel58-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: techie
+      MYSQL_DATABASE: mrcore5
+      MYSQL_USER: root
+      MYSQL_PASSWORD: techie
+    networks:
+      - mrcore-laravel58
+    ports:
+      - "7002:3306"
+
+networks:
+  mrcore-laravel58:
+

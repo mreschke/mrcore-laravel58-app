@@ -1,0 +1,6 @@
+#!/bin/bash
+
+echo "Starting All Composed Containers..."; echo
+base="$( cd "$(dirname "$0")" ; cd ..; pwd -P )"; cd $base
+./docker/stop
+./docker/start

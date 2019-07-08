@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# Service name as defined in your docker-compose.yml (not container name, but service name)
+service="web"
+workdir="/var/www/mreschke/php/mrcore-laravel58-app"
+
+echo "Running Command In a NEW Separate Container..."; echo
+base="$( cd "$(dirname "$0")" ; cd ..; pwd -P )"; cd $base
+docker-compose run --rm --workdir=$workdir $service composer "$@"
+

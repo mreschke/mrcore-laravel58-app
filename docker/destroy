@@ -1,0 +1,16 @@
+#!/bin/bash
+
+base="$( cd "$(dirname "$0")" ; cd ..; pwd -P )"; cd $base
+
+read -p "This will delete all containers AND DATA defined in your docker-compose.yml file.  Are you sure? " -n 1 -r
+echo    # (optional) move to a new line
+if [[ $REPLY =~ ^[Yy]$ ]]
+then
+    docker-compose down
+else
+    echo "Cancelled"
+fi
+
+
+
+

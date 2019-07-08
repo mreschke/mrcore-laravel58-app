@@ -1,5 +1,0 @@
-#!/bin/bash
-
-source "$( cd "$(dirname "$0")" ; pwd -P )"/.bashrc
-
-docker-compose -f $compose_common "$@"
